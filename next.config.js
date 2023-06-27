@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+cssConfig = {};
+module.exports = {
   webpack(config, options) {
     const { isServer } = options;
     config.module.rules.push({
@@ -19,9 +20,11 @@ const nextConfig = {
         },
       ],
     });
+    config.externals.push({
+      'utf-8-validate': 'commonjs utf-8-validate',
+      bufferutil: 'commonjs bufferutil',
+    });
 
     return config;
   },
 };
-
-module.exports = nextConfig;
