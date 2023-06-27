@@ -15,7 +15,7 @@ export const Footer: FC<PageProps> = () => {
         </span>
         <div className='flex items-center justify-between gap-10 lg:py-4'>
           <motion.a
-            href='https://github.com/JeremyFlores137'
+            href='https://github.com/JeremyFlores137/fp-2023-web'
             target={'_blank'}
             whileHover={{ y: -2 }}
             className='w-6'
