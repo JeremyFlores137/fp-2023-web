@@ -6,6 +6,7 @@ import { FC } from 'react';
 interface ProjectPageProps {}
 
 const ProjectPage: FC<ProjectPageProps> = () => {
+  
   function handleClick(num:number) {
     alert("se hizo click al boton "+num)
   }
