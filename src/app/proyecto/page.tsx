@@ -6,9 +6,8 @@ import { FC } from 'react';
 interface ProjectPageProps {}
 
 const ProjectPage: FC<ProjectPageProps> = () => {
-  
-  function handleClick(num:number) {
-    alert("se hizo click al boton "+num)
+  function handleClick(num: number) {
+    alert('se hizo click al boton ' + num);
   }
 
   return (
@@ -23,37 +22,35 @@ const ProjectPage: FC<ProjectPageProps> = () => {
       />
       <div className='w-full'>
         <iframe
-          width='1500'
-          height='843'
           src='https://www.youtube.com/embed/sOnqjkJTMaA'
           title='YouTube video player'
           frameBorder='0'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
           allowFullScreen
-          className='m-auto md:w-[80vw] md:h-[28vh]'
+          className='m-auto h-[80vh] w-[70vw] sm:h-[300px] sm:w-[95vw] lg:h-[500px] xl:w-[90vw]'
         ></iframe>
       </div>
-      <div className='my-5 flex flex-col justify-center items-center'>
-        <div className="border border-solid border-black">
-          <Button title='Botón 1' handleClick={()=> handleClick(1)} />
-          <Button title='Botón 2' handleClick={()=> handleClick(2)} />
-          <Button title='Botón 3' handleClick={()=> handleClick(3)} />
+      <div className='my-5 flex w-full flex-col items-center justify-center'>
+        <div className='border border-solid border-black'>
+          <Button title='Botón 1' handleClick={() => handleClick(1)} />
+          <Button title='Botón 2' handleClick={() => handleClick(2)} />
+          <Button title='Botón 3' handleClick={() => handleClick(3)} />
         </div>
-        <div className="border border-solid border-black">
-          <Button title='Botón 4' handleClick={()=> handleClick(4)} />
-          <Button title='Botón 5' handleClick={()=> handleClick(5)} />
+        <div className='border border-solid border-black'>
+          <Button title='Botón 4' handleClick={() => handleClick(4)} />
+          <Button title='Botón 5' handleClick={() => handleClick(5)} />
         </div>
-        <div className="border border-solid border-black">
-          <Button title='Botón 6' handleClick={()=> handleClick(6)} />
-          <Button title='Botón 7' handleClick={()=> handleClick(7)} />
+        <div className='border border-solid border-black'>
+          <Button title='Botón 6' handleClick={() => handleClick(6)} />
+          <Button title='Botón 7' handleClick={() => handleClick(7)} />
         </div>
-        <div className="border border-solid border-black">
-          <Button title='Botón 8' handleClick={()=> handleClick(8)} />
-          <Button title='Botón 9' handleClick={()=> handleClick(9)} />
+        <div className='border border-solid border-black'>
+          <Button title='Botón 8' handleClick={() => handleClick(8)} />
+          <Button title='Botón 9' handleClick={() => handleClick(9)} />
         </div>
-        <div className="border border-solid border-black">
-          <Button title='Botón 10' handleClick={()=> handleClick(10)} />
-          <Button title='Botón 11' handleClick={()=> handleClick(11)} />
+        <div className='border border-solid border-black'>
+          <Button title='Botón 10' handleClick={() => handleClick(10)} />
+          <Button title='Botón 11' handleClick={() => handleClick(11)} />
         </div>
       </div>
     </section>

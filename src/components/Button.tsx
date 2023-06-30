@@ -11,7 +11,8 @@ export const Button: FC<ButtonProps> = ({ title, handleClick }) => {
       onClick={handleClick}
       className='m-5 w-[150px] rounded-lg bg-gradient-to-r
   from-[#0b132b] via-[#1c2541] to-[#3a506b] p-5 text-white duration-1000
-      ease-in-out hover:from-black hover:via-black hover:to-black dark:text-white md:w-[80px] md:text-lg
+      ease-in-out hover:from-black hover:via-black hover:to-black dark:text-white md:w-[110px] md:text-lg
+      sm:m-1
   '
     >
       {title}
