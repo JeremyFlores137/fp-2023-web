@@ -27,7 +27,7 @@ const ProjectPage: FC<ProjectPageProps> = () => {
           frameBorder='0'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
           allowFullScreen
-          className='m-auto h-[80vh] w-[70vw] sm:h-[300px] sm:w-[95vw] lg:h-[500px] xl:w-[90vw]'
+          className='m-auto h-[80vh] w-[70vw] sm:h-[300px] sm:w-[100vw] lg:h-[500px] xl:w-[90vw]'
         ></iframe>
       </div>
       <div className='my-5 flex w-full flex-col items-center justify-center'>

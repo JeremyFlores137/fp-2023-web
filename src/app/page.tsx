@@ -1,15 +1,22 @@
 'use client';
 import Image from 'next/image';
 import cortana from '../assets/img/cortana_main.png';
-import camera from '../assets/img/camera.png';
-import { TextAnimation, Transition } from '@/components';
+import { SliderMain, TextAnimation, Transition } from '@/components';
 import { useState } from 'react';
 import { SvgComponentSend } from '@/components/svgComponents';
+import { sliderContent } from '@/assets/utils';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+
 export default function Home() {
   const [prompt, setPrompt] = useState('');
   const [result, setResult] = useState('');
   const [isLoading, setIsLoading] = useState(false);
- 
+  const [index, setIndex] = useState(0);
+
+  const handleIndex = (ind: number) => {
+    setIndex(ind);
+  };
+
   const handleSubmit = async () => {
     setIsLoading(true);
     try {
@@ -38,27 +45,29 @@ export default function Home() {
           lg:!text-5xl md:!mb-5 md:!text-4xl sm:!text-3xl
           '
       />
-      <div className='mx-5 flex max-w-[2000px] justify-center rounded-2xl border border-dotted border-blue-900 p-5 dark:border-white md:flex-col'>
-        <p className='mr-5 font-roboto dark:text-white/90 md:mr-0 md:text-sm'>
-          El proyecto se centra en el desarrollo de un sistema web para
-          controlar un brazo robótico conectado a una cámara. El objetivo
-          principal es implementar algoritmos de reconocimiento facial basados
-          en redes neuronales convolucionales (CNN) para identificar rostros
-          cubiertos y prevenir robos o posibles intentos de robo. El sistema
-          permitirá a los usuarios controlar el brazo robótico a través de una
-          interfaz web desde cualquier dispositivo con conexión a Internet.
-          Desde esta interfaz, podrán controlar los movimientos del brazo
-          robótico y visualizar en tiempo real las imágenes capturadas por la
-          cámara.
-        </p>
-        <Image
-          src={camera.src}
-          width={400}
-          height={400}
-          alt='camera'
-          className='rounded-2xl md:m-auto md:mt-5'
-        />
+
+      <div className='rounded-2xl border border-dotted border-blue-900 dark:border-white 3xl:m-5 md:m-2'>
+        <div className=' max-w-[2000px]  p-5 md:mx-0  '>
+          <SliderMain
+            text={sliderContent[index].text}
+            srcImg={sliderContent[index].img}
+            alt={sliderContent[index].alt}
+          />
+        </div>
+
+        <div className='flex cursor-pointer justify-center text-center'>
+          {sliderContent.map((content, index) => (
+            <div
+              key={index}
+              className='px-3 py-2 duration-500 ease-in-out hover:scale-125 md:px-2'
+              onClick={() => handleIndex(index)}
+            >
+              <FiberManualRecordIcon className='dark:fill-white' />
+            </div>
+          ))}
+        </div>
       </div>
+
       <div className='flex w-full flex-col items-center justify-center py-5 '>
         <Image
           src={cortana.src}
@@ -67,12 +76,14 @@ export default function Home() {
           alt='Foto de Cortana'
           className='mt-28 cursor-pointer rounded-[50%] bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 duration-700 ease-in-out hover:shadow-3xl dark:from-black dark:via-black dark:to-black dark:hover:shadow-white-xl sm:w-[80vw]'
         />
+
         <div className='my-10 mb-28 w-[50vw] rounded-xl bg-slate-200 text-center dark:bg-black/40 3xl:p-8 2xl:p-5 sm:w-[80vw]'>
           <TextAnimation
             text='Hola, mi nombre es Cortana. Estoy aquí para responder a tus preguntas sobre este emocionante proyecto. ¡Dispara tus preguntas!'
-            className='!text-center !normal-case text-black/90 dark:text-white/90 3xl:!text-5xl 2xl:!text-3xl lg:!text-2xl md:!text-xl'
+            className='animate-pulse !text-center !normal-case text-black/90 dark:text-white/90 3xl:!text-5xl 2xl:!text-3xl lg:!text-2xl md:!text-xl'
           />
         </div>
+
         <div
           className='flex w-[60vw] flex-col items-center rounded-2xl bg-gradient-to-r from-[#0582ca] via-[#006494]
          to-[#003554] py-10 dark:from-[#000000] dark:via-[#2f4550] dark:to-[#586f7c] md:w-[95vw]'
