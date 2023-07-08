@@ -11,9 +11,8 @@ module.exports = {
     extend: {
       boxShadow: {
         '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
-        'white-xl': '0 35px 60px -15px rgba(255, 255, 255, 0.3)'
+        'white-xl': '0 35px 60px -15px rgba(255, 255, 255, 0.3)',
       },
-      colors: { primary: '#D1D5DB' },
       backgroundImage: {
         circularLight:
           'repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#FFF 5px,#FFF 100px)',
@@ -41,6 +40,21 @@ module.exports = {
       },
       animation: {
         'spin-slow': 'spin 8s linear infinite',
+      },
+      colors: {
+        primary: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+          950: '#172554',
+        },
       },
     },
     screens: {

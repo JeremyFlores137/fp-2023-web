@@ -15,17 +15,18 @@ import Link from 'next/link';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { useThemeSwitcher } from '../components/hook';
+import { signOut, useSession } from 'next-auth/react';
 
 interface NavBarProps {}
 
 export const NavBar: FC<NavBarProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mode, setMode] = useThemeSwitcher();
+  const session = useSession();
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-
   return (
     <AppBar className='dark:bg-black'>
       <Toolbar variant='dense'>
@@ -64,11 +65,20 @@ export const NavBar: FC<NavBarProps> = () => {
         <Box flex={1} />
 
         <IconButton
-          className='hover:text-whit dark:text-white dark:hover:text-stone-400'
+          className='hover:text-white dark:text-white dark:hover:text-stone-400'
           onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
         >
           {mode === 'dark' ? <WbSunnyIcon /> : <DarkModeIcon />}
         </IconButton>
+
+        {session.status === 'authenticated' && (
+          <button
+            className='text-black/60 hover:text-white dark:text-white dark:hover:text-stone-400 lg:hidden'
+            onClick={() => signOut()}
+          >
+            Salir
+          </button>
+        )}
 
         <button
           className='ml-[0.62em] hidden flex-col items-center justify-center lg:flex'
@@ -133,8 +143,19 @@ export const NavBar: FC<NavBarProps> = () => {
                 className='rounded-lg from-slate-200 to-stone-900
                  ease-in-out hover:scale-105 hover:bg-gradient-to-tr dark:text-black'
               >
-                <Button color='inherit'>Proyecto</Button>
+                <Button color='inherit' className='font-roboto text-lg'>
+                  Proyecto
+                </Button>
               </Link>
+              {session.status === 'authenticated' && (
+                <button
+                  className='rounded-lg from-slate-200 to-stone-900
+              p-2 font-roboto text-lg ease-in-out hover:scale-105 hover:bg-gradient-to-tr dark:text-black'
+                  onClick={() => signOut()}
+                >
+                  SALIR
+                </button>
+              )}
             </Box>
           </div>
         ) : null}
