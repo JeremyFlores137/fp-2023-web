@@ -143,8 +143,10 @@ export const NavBar: FC<NavBarProps> = () => {
                 className='rounded-lg from-slate-200 to-stone-900
                  font-roboto ease-in-out hover:scale-105 hover:bg-gradient-to-tr dark:text-black'
               >
-                <Button color='inherit' className='font-roboto text-lg'>
-                  PROYECTO
+                <Button color='inherit' className='text-lg'>
+                  <Typography fontFamily={'Roboto'} fontSize={18}>
+                    PROYECTO
+                  </Typography>
                 </Button>
               </Link>
               {session.status === 'authenticated' && (
