@@ -141,10 +141,10 @@ export const NavBar: FC<NavBarProps> = () => {
                 href='/proyecto'
                 onClick={handleClick}
                 className='rounded-lg from-slate-200 to-stone-900
-                 ease-in-out hover:scale-105 hover:bg-gradient-to-tr dark:text-black'
+                 font-roboto ease-in-out hover:scale-105 hover:bg-gradient-to-tr dark:text-black'
               >
                 <Button color='inherit' className='font-roboto text-lg'>
-                  Proyecto
+                  PROYECTO
                 </Button>
               </Link>
               {session.status === 'authenticated' && (
