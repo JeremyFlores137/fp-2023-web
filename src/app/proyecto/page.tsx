@@ -81,7 +81,7 @@ const ProjectPage: FC<ProjectPageProps> = () => {
             className='m-auto h-[80vh] w-[70vw] xl:w-[90vw] lg:h-[500px] sm:h-[300px] sm:w-[100vw]'
           ></iframe>
         </div>
-        <div className='flex w-full items-start justify-between md:flex-col mt-5'>
+        <div className='mt-5 flex w-full items-start justify-between md:flex-col'>
           <div className='w-full md:m-auto md:w-[90%]'>
             <Image
               src={robotin.src}

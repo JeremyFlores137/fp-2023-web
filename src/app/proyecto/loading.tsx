@@ -6,8 +6,8 @@ const Loading: FC<LoadingProps> = () => {
   return (
     <div
       role='status'
-      className='dark:bg-[#191919] flex h-[100vh] w-[100%] items-center
-        justify-center'
+      className='flex h-[100vh] w-[100%] items-center justify-center
+        dark:bg-[#191919]'
     >
       <svg
         aria-hidden='true'

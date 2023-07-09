@@ -53,7 +53,6 @@ export default function Home() {
       event.preventDefault();
       handleSubmit();
     }
-    
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
