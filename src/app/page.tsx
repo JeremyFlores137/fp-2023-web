@@ -17,9 +17,19 @@ export default function Home() {
   const [result, setResult] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [index, setIndex] = useState(0);
+  const [isClicked, setIsClicked] = useState([true, false, false]);
 
   const handleIndex = (ind: number) => {
     setIndex(ind);
+    setIsClicked((prev) =>
+      prev.map((val, i) => {
+        if (i === ind) {
+          return true;
+        } else {
+          return false;
+        }
+      })
+    );
   };
 
   const playAudio = () => {
@@ -69,9 +79,10 @@ export default function Home() {
           '
       />
 
-      <div className='flex h-[500px] flex-col items-center justify-between rounded-2xl border border-dotted border-blue-900 dark:border-white 3xl:m-5 md:m-2 sm:m-1 sm:h-[800px]'>
+      <div className='flex h-[550px] flex-col items-center justify-between rounded-2xl border border-dotted border-blue-900 dark:border-white 3xl:m-5 md:m-2 sm:m-1 sm:h-[900px]'>
         <div className='max-w-[2000px] p-5 md:mx-0 md:flex md:items-center'>
           <SliderMain
+            title={sliderContent[index].title}
             text={sliderContent[index].text}
             srcImg={sliderContent[index].img}
             alt={sliderContent[index].alt}
@@ -84,7 +95,13 @@ export default function Home() {
               className='px-3 py-2 transition-all duration-500 ease-in-out hover:scale-125 md:px-2'
               onClick={() => handleIndex(index)}
             >
-              <FiberManualRecordIcon className='dark:fill-white' />
+              <FiberManualRecordIcon
+                className={`${
+                  isClicked[index]
+                    ? 'scale-110 fill-blue-500 dark:fill-blue-500'
+                    : 'scale-75 dark:fill-white'
+                }`}
+              />
             </div>
           ))}
         </div>

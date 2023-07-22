@@ -1,19 +1,22 @@
 import camera from '../img/camera.png';
-import camera2 from '../img/camera2.png';
+import camera2 from '../img/camera2.jpg';
 import camera3 from '../img/camera3.png';
 export const sliderContent = [
   {
-    text: 'El proyecto se centra en el desarrollo de un sistema web para controlar un brazo robótico conectado a una cámara. El objetivo principal es implementar algoritmos de reconocimiento facial basados en redes neuronales convolucionales (CNN) para identificar rostros cubiertos y prevenir robos o posibles intentos de robo. El sistema permitirá a los usuarios controlar el brazo robótico a través de una interfaz web desde cualquier dispositivo con conexión a Internet. Desde esta interfaz, podrán controlar los movimientos del brazo robótico y visualizar en tiempo real las imágenes capturadas por la cámara.',
+    title: '¿En qué consiste el proyecto?',
+    text: 'El proyecto consiste en el desarrollo de un sistema web para controlar un brazo robótico conectado a una cámara. El objetivo principal de este proyecto es mejorar la eficiencia y la efectividad en la detección temprana de objetos obstructores en la visualización facial en entornos de seguridad críticos. El robot, con su cámara y modelo entrenado, se despliega estratégicamente para realizar un monitoreo activo y continuo de las áreas objetivo. A través de una interfaz web intuitiva, los operadores pueden controlar el robot de forma remota, moviéndolo y ajustando su posición para obtener vistas óptimas y exhaustivas. La cámara del robot captura imágenes en tiempo real, que son procesadas por el modelo entrenado de detección de objetos obstructores.',
     img: camera.src,
     alt: 'camera',
   },
   {
-    text: "The Texas Department of Public Safety's latest data shows a 35 percent increase in child welfare cases involving victims of the Ebola virus. On Oct. 22 alone, 1,632 cases were logged. Texas' child.",
+    title: '¿Por qué la razón del proyecto?',
+    text: 'Viendo la coyuntura de la ciudad de Lima, Perú, o cualquier otro lugar donde los asaltos ocurren recurrentemente, en busca mejorar la seguridad y la capacidad de respuesta ante situaciones de robo en establecimientos. Este proyecto ayudará automatizando la llamada a la policía o la notificación inmediata al dueño del establecimiento, a través de un sistema de videovigilancia basado en un robot acoplado a una cámara con capacidades avanzadas de detección de rostros cubiertos, tales como gorros, lentes o mascarillas.',
     img: camera2.src,
     alt: 'camera',
   },
   {
-    text: 'The sun dipped below the horizon, casting a warm, golden glow across the landscape. A gentle breeze rustled the leaves of the tall trees, creating a soothing melody. The air was filled with the sweet fragrance of blooming flowers. Birds chirped happily, their melodious songs echoing through the tranquil atmosphere. As dusk settled in, the stars began to twinkle in the darkening sky, creating a mesmerizing display. It was a moment of serenity, where time seemed to stand still, and the worries of the world faded away.',
+    title: '¿Qué se busca resolver?',
+    text: 'La combinación del robot de cinco grados de libertad, la cámara con el modelo de detección y la integración del control web y las notificaciones VoIP, brinda una solución integral para la vigilancia proactiva y la detección temprana de objetos obstructores en entornos críticos. Este enfoque permite una respuesta rápida y eficiente, mejorando significativamente la seguridad y la eficacia de la vigilancia en situaciones que requieren una atención especial.',
     img: camera3.src,
     alt: 'camera',
   },

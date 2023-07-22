@@ -53,7 +53,7 @@ const ProjectPage: FC<ProjectPageProps> = () => {
       <section className='relative flex flex-col items-center justify-center'>
         <Transition />
         <TextAnimation
-          text='Proyecto'
+          text='Proyecto Cortana'
           className='!text-6x1 !my-5
           !mb-20 !text-center !normal-case dark:text-white/90 3xl:!ml-0 xl:!ml-0 xl:!text-6xl lg:!text-center
           lg:!text-5xl md:!mb-5 md:!text-4xl sm:!text-3xl
@@ -81,36 +81,90 @@ const ProjectPage: FC<ProjectPageProps> = () => {
             className='m-auto h-[80vh] w-[70vw] xl:w-[90vw] lg:h-[500px] sm:h-[300px] sm:w-[100vw]'
           ></iframe>
         </div>
-        <div className='mt-5 flex w-full items-start justify-between md:flex-col'>
-          <div className='w-full md:m-auto md:w-[90%]'>
+        <div className='m-5 flex gap-5 rounded-lg border border-black bg-[#001524]'>
+          <div className='p-3 text-white'>
+            ON{' '}
+            <span className='ml-2 rounded-full border-2 border-green-900 px-2'></span>
+          </div>
+          <span className='border border-black'></span>
+          <div className='p-3 text-white'>
+            OFF{' '}
+            <span className='ml-2 rounded-full border-2 border-red-900 px-2 bg-red-900'></span>
+          </div>
+        </div>
+        <div
+          className='my-5 flex max-w-[3000px] items-start justify-between gap-8 rounded-md lg:m-2 lg:flex-col
+        '
+        >
+          <div className='flex w-full self-center rounded-3xl border border-dashed border-black px-5 py-3 dark:border-white dark:bg-[#ced4da]'>
             <Image
               src={robotin.src}
               alt='foto de robotín'
               width={700}
               height={700}
+              className='m-auto'
             />
           </div>
-          <div className='my-5 flex w-full flex-col items-center justify-center'>
-            <div className='border border-solid border-black'>
-              <Button title='Botón 1' handleClick={() => handleClick(1)} />
-              <Button title='Botón 2' handleClick={() => handleClick(2)} />
-              <Button title='Botón 3' handleClick={() => handleClick(3)} />
+          <div
+            className='my-5 flex w-full flex-col items-center justify-center rounded-md border border-dashed border-red-800 bg-[#ffcad4] px-5 py-3 font-bold text-white dark:border-white dark:bg-[#84a98c]
+          lg:p-0'
+          >
+            <div className='flex w-full items-center justify-between'>
+              <div>
+                <Button
+                  title='Iniciar Conexión'
+                  handleClick={() => handleClick(1)}
+                />
+              </div>
+              <div>
+                <Button title='D-' handleClick={() => handleClick(2)} />
+                <Button title='D+' handleClick={() => handleClick(3)} />
+              </div>
             </div>
-            <div className='border border-solid border-black'>
-              <Button title='Botón 4' handleClick={() => handleClick(4)} />
-              <Button title='Botón 5' handleClick={() => handleClick(5)} />
+            <div className='flex w-full items-center justify-between'>
+              <div>
+                <Button
+                  title='Modo Manual'
+                  handleClick={() => handleClick(1)}
+                />
+              </div>
+              <div>
+                <Button title='C-' handleClick={() => handleClick(4)} />
+                <Button title='C+' handleClick={() => handleClick(5)} />
+              </div>
             </div>
-            <div className='border border-solid border-black'>
-              <Button title='Botón 6' handleClick={() => handleClick(6)} />
-              <Button title='Botón 7' handleClick={() => handleClick(7)} />
+            <div className='flex w-full items-center justify-between'>
+              <div>
+                <Button
+                  title='Modo Automático'
+                  handleClick={() => handleClick(1)}
+                />
+              </div>
+              <div>
+                <Button title='B-' handleClick={() => handleClick(6)} />
+                <Button title='B+' handleClick={() => handleClick(7)} />
+              </div>
             </div>
-            <div className='border border-solid border-black'>
-              <Button title='Botón 8' handleClick={() => handleClick(8)} />
-              <Button title='Botón 9' handleClick={() => handleClick(9)} />
+            <div className='flex w-full items-center justify-between'>
+              <div>
+                <Button
+                  title='Cerrar Conexión'
+                  handleClick={() => handleClick(1)}
+                />
+              </div>
+              <div>
+                <Button title='A-' handleClick={() => handleClick(8)} />
+                <Button title='A+' handleClick={() => handleClick(9)} />
+              </div>
             </div>
-            <div className='border border-solid border-black'>
-              <Button title='Botón 10' handleClick={() => handleClick(10)} />
-              <Button title='Botón 11' handleClick={() => handleClick(11)} />
+            <div className='flex w-full justify-between'>
+              <Button
+                title='Enviar Notificación'
+                handleClick={() => handleClick(1)}
+              />
+              <div className=' w-[65%] self-center text-center text-xl text-red-800 dark:text-[#081c15] sm:text-lg'>
+                <p>Llamar al 105</p>
+              </div>
             </div>
           </div>
         </div>
