@@ -42,7 +42,7 @@ export const SliderMain: FC<SliderMainProps> = ({
         width={250}
         height={250}
         alt={alt}
-        className='rounded-2xl md:m-auto md:mt-5'
+        className='rounded-2xl md:m-auto md:mt-5 xxs:h-[40vh]'
         priority
       />
     </motion.div>

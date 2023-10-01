@@ -79,7 +79,7 @@ export default function Home() {
           '
       />
 
-      <div className='flex h-[550px] flex-col items-center justify-between rounded-2xl border border-dotted border-blue-900 dark:border-white 3xl:m-5 md:m-2 sm:m-1 sm:h-[900px]'>
+      <div className='flex h-[600px] flex-col items-center justify-between rounded-2xl border border-dotted border-blue-900 dark:border-white 3xl:m-5 md:m-2 sm:m-1 sm:h-[900px]'>
         <div className='max-w-[2000px] p-5 md:mx-0 md:flex md:items-center'>
           <SliderMain
             title={sliderContent[index].title}
