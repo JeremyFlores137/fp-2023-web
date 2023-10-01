@@ -1,7 +1,7 @@
 'use client';
 import { TextAnimation, Transition } from '@/components';
 import { Button } from '@/components';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import robotin from '@/assets/img/robotin_proyecto.png';
@@ -89,7 +89,7 @@ const ProjectPage: FC<ProjectPageProps> = () => {
           <span className='border border-black'></span>
           <div className='p-3 text-white'>
             OFF{' '}
-            <span className='ml-2 rounded-full border-2 border-red-900 px-2 bg-red-900'></span>
+            <span className='ml-2 rounded-full border-2 border-red-900 bg-red-900 px-2'></span>
           </div>
         </div>
         <div
